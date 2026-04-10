@@ -54,25 +54,25 @@ describe('Accordion', () => {
     });  
   });  
   
-  // describe('accessibility', () => {  
-  //   test('each button has aria-controls pointing to its content region', () => {  
-  //     render(<Accordion />);  
-  //     const buttons = screen.getAllByRole('button');  
-  //     buttons.forEach((button) => {  
-  //       const controlsId = button.getAttribute('aria-controls');  
-  //       expect(controlsId).toBeTruthy();  
-  //       expect(document.getElementById(controlsId!)).toBeInTheDocument();  
-  //     });  
-  //   });  
+  describe('accessibility', () => {  
+    test('each button has aria-controls pointing to its content region', () => {  
+      render(<Accordion />);  
+      const buttons = screen.getAllByRole('button');  
+      buttons.forEach((button) => {  
+        const controlsId = button.getAttribute('aria-controls');  
+        expect(controlsId).toBeTruthy();  
+        expect(document.getElementById(controlsId!)).toBeInTheDocument();  
+      });  
+    });  
   
-  //   test('content regions have aria-labelledby pointing back to their header', () => {  
-  //     render(<Accordion />);  
-  //     const regions = screen.getAllByRole('region', { hidden: true });  
-  //     regions.forEach((region) => {  
-  //       const labelledBy = region.getAttribute('aria-labelledby');  
-  //       expect(labelledBy).toBeTruthy();  
-  //       expect(document.getElementById(labelledBy!)).toBeInTheDocument();  
-  //     });  
-  //   });  
-  // });  
+    test('content regions have aria-labelledby pointing back to their header', () => {  
+      render(<Accordion />);  
+      const regions = screen.getAllByRole('region', { hidden: true });  
+      regions.forEach((region) => {  
+        const labelledBy = region.getAttribute('aria-labelledby');  
+        expect(labelledBy).toBeTruthy();  
+        expect(document.getElementById(labelledBy!)).toBeInTheDocument();  
+      });  
+    });  
+  });  
 });
