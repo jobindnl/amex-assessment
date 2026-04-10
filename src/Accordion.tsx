@@ -27,7 +27,7 @@ export const Accordion = ({ allowMultiple = true }) => {
   };
 
   return (
-    <section aria-labelledby='button-sections' style={{ maxWidth: '400px', border: '1px solid #ddd', borderRadius: '4px' }}>
+    <section>
       {data.map((item, index) => {
         const isOpen = activeIndices.includes(index);
         
