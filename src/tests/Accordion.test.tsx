@@ -44,7 +44,7 @@ describe('Accordion', () => {
   
   describe('when shouldAllowMultipleExpanded is false', () => {  
     test('only one panel is visible at a time', async () => {  
-    const { user } = renderWithUser(<Accordion />);  
+    const { user } = renderWithUser(<Accordion allowMultiple={false} />);  
       const buttons = screen.getAllByRole('button');  
       await user.click(buttons[0]);  
       expect(screen.getByText('Content for panel one')).toBeVisible();  
