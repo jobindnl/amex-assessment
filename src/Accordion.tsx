@@ -5,9 +5,9 @@ export const Accordion = ({ allowMultiple = true }) => {
   const [activeIndices, setActiveIndices] = useState<number[]>([]);
 
   const data = [
-    { title: 'Section 1', content: 'Content for panel one' },
-    { title: 'Section 2', content: 'Content for panel two' },
-    { title: 'Section 3', content: 'Content for panel three' }
+    { title: 'Section 1', content: 'Content for panel one', key: 'section1' },
+    { title: 'Section 2', content: 'Content for panel two', key: 'section2' },
+    { title: 'Section 3', content: 'Content for panel three', key: 'section3' },
   ];
   
   const toggle = (index: number) => {
@@ -31,7 +31,7 @@ export const Accordion = ({ allowMultiple = true }) => {
         const isOpen = activeIndices.includes(index);
         
         return (
-          <div key={index}>
+          <div key={item.key}>
             <button 
               onClick={() => toggle(index)}
             >
